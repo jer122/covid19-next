@@ -1,0 +1,49 @@
+configurations {
+    jaxb
+}
+
+jar {
+    enabled = false
+}
+
+dependencies {
+    implementation project(':covid-common')
+
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+    //batch
+    implementation('org.springframework.boot:spring-boot-starter-batch:2.5.3')
+    testImplementation('org.springframework.batch:spring-batch-test')
+    //jaxb
+    jaxb(
+            'com.sun.xml.bind:jaxb-xjc:2.3.1',
+            'com.sun.xml.bind:jaxb-impl:2.3.1',
+            'org.glassfish.jaxb:jaxb-runtime:2.3.3'
+    )
+}
+
+test {
+    exclude('**/*')
+}
+
+task jaxb {
+    System.setProperty('javax.xml.accessExternalSchema', 'all')
+    def jaxbTargetDir = file("src/generated-sources/jaxb")
+    doLast {
+        jaxbTargetDir.mkdirs()
+        ant.taskdef(
+                name: 'xjc',
+                classname: 'com.sun.tools.xjc.XJCTask',
+                classpath: configurations.jaxb.asPath
+        )
+        ant.jaxbTargetDir = jaxbTargetDir
+        ant.xjc(
+                destdir: '${jaxbTargetDir}',
+                package: 'com.roytuts.jaxb',
+                schema: 'src/main/resources/xsd/ContinentRes.xsd'
+        )
+    }
+}
+

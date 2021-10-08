@@ -1,0 +1,5 @@
+rootProject.name = 'covid19-next'
+include 'covid-api'
+include 'covid-batch'
+include 'covid-common'
+

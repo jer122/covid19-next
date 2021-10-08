@@ -1,0 +1,42 @@
+openapi:
+  service-key: qzBsBeY5zLuApNiONuch%2FYl18gb%2FNSvpVUb009InBwB18YvKdgLUi3qYai2RXgsQl6dbRYETkkOeRb7s4x%2B0Bg%3D%3D
+
+server:
+  port: 8080
+
+spring:
+  config:
+    activate:
+      #      on-profile: mysql
+      on-profile: default
+  datasource:
+    hikari:
+#      jdbc-url: jdbc:mysql://121.141.63.46:3307/next_covid
+#      username: root
+#      password: nextcovid1!
+      jdbc-url: jdbc:mysql://192.168.17.129:3306/next-covid
+      username: root
+      password: vmware1!
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: none #띄어쓰기 6칸
+    properties:
+      hibernate:
+        order_inserts: true
+        order_updates: true
+        #        show_sql: true #띄어쓰기 8칸
+        format_sql: true #띄어쓰기 8칸
+        jdbc.batch_size: 100
+
+
+
+  codec:
+    max-in-memory-size: 10MB
+
+#  main:
+#    allow-bean-definition-overriding: true
+logging.level: #띄어쓰기 없음
+  org.hibernate.SQL: debug #띄어쓰기 2칸
+  org.hibernate.type: trace

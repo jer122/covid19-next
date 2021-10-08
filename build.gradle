@@ -1,0 +1,77 @@
+
+plugins {
+	id 'org.springframework.boot' version '2.5.3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+bootJar {
+	enabled = false
+}
+
+allprojects {
+	repositories {
+		mavenCentral()
+	}
+}
+
+subprojects {
+	group = 'com'
+	version = '0.0.1-SNAPSHOT'
+	sourceCompatibility = '1.8'
+
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	repositories {
+		mavenCentral()
+		maven { url 'https://repo.spring.io/snapshot' }
+	}
+
+	configurations {
+		developmentOnly
+		runtimeClasspath {
+			extendsFrom developmentOnly
+		}
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
+	dependencies {
+		implementation 'org.springframework.boot:spring-boot-starter'
+
+		// DB
+		implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+		implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+		runtimeOnly 'mysql:mysql-connector-java'
+		runtimeOnly 'com.h2database:h2:1.4.197'
+		implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.4'
+		implementation 'org.hibernate:hibernate-entitymanager'
+
+		// lombok
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+
+		//webflux
+		implementation('org.projectreactor:reactor-spring:1.0.1.RELEASE')
+		implementation('org.springframework.boot:spring-boot-starter-webflux')
+
+		// security + jwt
+		implementation 'org.springframework.boot:spring-boot-starter-security'
+		implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+		compileOnly group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
+		runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
+		runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
+
+		testImplementation('org.springframework.boot:spring-boot-starter-test') {
+			exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+		}
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+}
+

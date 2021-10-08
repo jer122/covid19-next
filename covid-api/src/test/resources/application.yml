@@ -1,0 +1,42 @@
+spring:
+  config:
+    activate:
+      on-profile: default
+
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://192.168.17.129:3306/next-covid
+      username: root
+      password: vmware1!
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update #띄어쓰기 6칸
+    properties:
+      hibernate:
+        order_inserts: true
+        show_sql: true #띄어쓰기 8칸
+        format_sql: true #띄어쓰기 8칸
+  main:
+    allow-bean-definition-overriding: true
+
+  redis:
+    host: 121.141.63.46
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+    password: nextcovid
+
+#  main:
+#    allow-bean-definition-overriding: true
+#logging.level:
+#  org.hibernate.SQL: debug #띄어쓰기 2칸
+server:
+  port: 8080
+#  org.hibernate.type: trace
+
+jwt:
+  secret: YXNvZnFvd2xqa2Zrc25tYWRma2xubXNkbGtmbmFzZGxrZm5hc2xrZGZuYWxrdzRuZXRvcHdkZmpwb3NqZGZwb2FzZGZhc29mcW93bGprZmtzbm1hZGZrbG5tc2Rsa2ZuYXNkbGtmbmFzbGtkZm5hbGt3NG5ldG9wd2RmanBvc2pkZnBvYXNkZmFzb2Zxb3dsamtma3NubWFkZmtsbm1zZGxrZm5hc2Rsa2ZuYXNsa2RmbmFsa3c0bmV0b3B3ZGZqcG9zamRmcG9hc2RmYXNvZnFvd2xqa2Zrc25tYWRma2xubXNkbGtmbmFzZGxrZm5hc2xrZGZuYWxrdzRuZXRvcHdkZmpwb3NqZGZwb2FzZGZhc29mcW93bGprZmtzbm1hZGZrbG5tc2Rsa2ZuYXNkbGtmbmFzbGtkZm5hbGt3NG5ldG9wd2RmanBvc2pkZnBvYXNkZmFzb2Zxb2FzZGZhc2Rxd2Z6eHY=
