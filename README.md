@@ -21,7 +21,8 @@
 
 ## 4. Team (FE & BE)
 
-[제목 없음](https://www.notion.so/0679088048474e20b66006142bc1176f)
+* 조성재
+* 김진원
 
 ---
 
@@ -50,14 +51,14 @@
 ---
 
 ## 6. Architecture
+<img width="1000" alt="next-covid-architecture" src="https://user-images.githubusercontent.com/27146519/136890904-c35d152d-0cfd-44f8-abc9-f33703d2d53c.png">
 
-![next-covid-architecture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ec5b8ffb-b185-4200-9648-b927273d0165/next-covid-architecture.png)
 
 ---
 
 ## 7. Database
+![Next-Covid_erd](https://user-images.githubusercontent.com/27146519/136890886-4eb76bd1-8f49-4f66-917c-3974791d5b39.png)
 
-![Next-Covid_erd.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8d5eee23-d2e1-47af-ad48-7bf3ad255b0d/Next-Covid_erd.png)
 
 ---
 
