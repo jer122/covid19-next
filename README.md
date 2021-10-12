@@ -1,46 +1,78 @@
-## 사용자(회원) 관리
-### 소셜 로그인 기능
-* 구글 로그인 기능을 지원한다.
-* 카카오 로그인 기능을 지원한다.
+## 1. 프로젝트 소개
 
-### 회원 관리 기능
-### 회원가입
-* 서비스 자체적 회원가입 기능을 지원한다.
-* Email, Password, Phone 등의 정보를 입력받는다.
+> " 여행을 가고 싶은데 코로나 때문에 갈 수가 없네?" 😭
+"백신이 보급되고 with 코로나 시대가 오면 다시 여행을 갈 수 있지않을까?"
+> 
+- 코로나에서 비교적 안전하고 여행 가능한 국가를 소개하고 국가별 여행지를 추천하는 서비스를  목표로 개발하고 있습니다.
 
-### 로그인 로그 모니터링 페이지
-* 회원이 로그인한 기록을 확인한다.
+---
 
-### 회원관리 페이지
-* 회원의 정보를 관리 및 모니터링 한다.
+## 2. 접속 정보
 
-## 여행관련 서비스
-* 여행가능한 국가 정보 제공 기능
-* 여행가능한 국가 정보를 제공한다.
-* covid19 시대에 현재 여행 가능한 국가를 확인할 수 있다.
-* 여행 가능한 상태로 전환될 유망한 국가 정보 제공 기능
-* 여행 가능한 상태로 전환될 유망한 국가 정보를 제공한다.
-* 국가별 코로나 뉴스 Notion – The all-in-one workspace for your notes, tasks, wikis, and databases. 
+- [https://next-covid-kohl.vercel.app/](https://next-covid-kohl.vercel.app/)
 
-### 여행 가능한 국가의 여행 코스 추천 기능
-* 여행이 가능한 국가의 추천 여행 코스(도시) 정보를 제공한다.
+---
 
-### 여행코스 관리 기능
-* 사용자 및 관리자가 국가에 대한 여행지를 등록, 수정 한다.
+## 3. 개발기간
 
-* 여행지에 대해 사용자가 후기 및 별점을 줄 수 있다
+- 2021년 08월 02일 ~ 2021년 10년 01일
 
-### 여행국가, 여행코스 알림 기능
-* 구독 기능 선택 사용자에 대해 제공하는 기능
-* 여행이 가능하게 전환될 유망한 국가 정보 및 여행 코스를 소개하는 메일, 메시지 발송
+---
 
-### 코로나 관련 기능 (후순위)
-* 국내 코로나 정보제공 서비스
-* 확진자, 격리자, 사망자 등 코로나 현황 정보를 제공한다.
+## 4. Team (FE & BE)
 
-* 백신 접종률 코로나 거리두기 정보 제공
+[제목 없음](https://www.notion.so/0679088048474e20b66006142bc1176f)
 
-* 해외 코로나 정보 제공 서비스
-* 확진자, 격리자, 사망자 등 코로나 현황 정보를 제공한다.
+---
 
-* 백신 접종률 정보 제공
+## 5. 기술스택
+
+### FrontEnd
+
+- Javascript, Typescript
+- React, Recoil, SWR, Next.js, Material-UI
+
+### BackEnd
+
+- Java 8, Javascript, Typescript
+- SpringBoot 2.5.3, JPA, Querydsl, Spring Batch, Redis
+- Spring Security, Oauth2 Client
+- Express
+- Mysql 5.7
+
+### Build & Deploy
+
+- jenkins
+- Vercel
+- Docker
+- Gradle
+
+---
+
+## 6. Architecture
+
+![next-covid-architecture.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ec5b8ffb-b185-4200-9648-b927273d0165/next-covid-architecture.png)
+
+---
+
+## 7. Database
+
+![Next-Covid_erd.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8d5eee23-d2e1-47af-ad48-7bf3ad255b0d/Next-Covid_erd.png)
+
+---
+
+## 8. 주요 기능
+
+- Security+로그인
+    - 사용자가 로그인
+- 코로나 국가별 현황/위험도
+    - 국가별 코로나 위험도 레벨을 정보를 제공합니다.
+    - 국가별 코로나 확진자/사망자 정보를 확인할 수 있습니다.
+- 코로나 소식
+    - 국가별, 코로나 관련 소식(입국/출국, 격리) 을 확인할 수 있습니다.
+- 여행코스
+    - 회원가입 및 관리자에게 권한을 부여받은 사용자는 여행 코스 정보를 입력하는 에디터가 되어 정보를 제공할 수 있습니다.
+- 통합검색
+    - 국가 정보, 코로나 관련 정보, 여행 코스 관련 정보 검색시 검색페이지에 관련된 정보가 일괄적으로 표시 됩니다.
+
+---
